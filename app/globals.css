@@ -8,6 +8,12 @@
   box-sizing: border-box;
 }
 
+.glassmorphism {
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+
 /* ==== clerk class override ===== */
 
 .cl-userButtonPopoverActionButtonIcon {
@@ -44,14 +50,5 @@
 
   .flex-between {
     @apply flex justify-between items-center;
-  }
-}
-
-@layer base {
-  * {
-    @apply border-border;
-  }
-  body {
-    @apply bg-background text-foreground;
   }
 }
