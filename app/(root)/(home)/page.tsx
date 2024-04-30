@@ -1,4 +1,4 @@
-import React from "react";
+import MeetingTypeList from "@/components/MeetingTypeList";
 
 export default function Home() {
   const now = new Date();
@@ -25,6 +25,8 @@ export default function Home() {
           </div>
         </div>
       </div>
+
+      <MeetingTypeList />
     </section>
   );
 }
