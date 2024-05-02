@@ -6,6 +6,7 @@ import MeetingModal from "./MeetingModal";
 import { useUser } from "@clerk/nextjs";
 import { Call, useStreamVideoClient } from "@stream-io/video-react-sdk";
 import { useToast } from "@/components/ui/use-toast";
+import { Textarea } from "./ui/textarea";
 
 export default function MeetingTypeList() {
   const router = useRouter();
@@ -101,6 +102,39 @@ export default function MeetingTypeList() {
         handleClick={() => setMeetingState("isJoiningMeeting")}
         className="bg-yellow-1"
       />
+
+      {!callDetails ? (
+        <MeetingModal
+          isOpen={meetingState === "isScheduleMeeting"}
+          onClose={() => setMeetingState(undefined)}
+          title="Create Meeting"
+          handleClick={createMeeting}
+        >
+          <div className="flex flex-col gap-2.5">
+            <label
+              htmlFor=""
+              className="text-base text-normal leading-[22px] text-sky-2"
+            >
+              Add a discription
+            </label>
+            <Textarea className="border-none bg-dark-3 focus-visible:ring:0 focus-visible:ring-offset-0" />
+          </div>
+        </MeetingModal>
+      ) : (
+        <MeetingModal
+          isOpen={meetingState === "isScheduleMeeting"}
+          onClose={() => setMeetingState(undefined)}
+          title="Meeting Created"
+          className="text-center"
+          buttonText="Copy Meeting Link"
+          handleClick={() => {
+            // navigator.clipboard.writeText(meetingLink)
+            toast({ title: "Link copied" });
+          }}
+          image="/icons/checked.svg"
+          buttonIcon="/icons/copy.svg"
+        />
+      )}
       <MeetingModal
         isOpen={meetingState === "isInstantMeeting"}
         onClose={() => setMeetingState(undefined)}
