@@ -51,7 +51,7 @@ export default function CallList({
     const fetchRecordings = async () => {
       try {
         const callData = await Promise.all(
-          recordingsCalls.map((meeting) => meeting.queryRecordings())
+          recordingsCalls?.map((meeting) => meeting.queryRecordings()) ?? []
         );
 
         const recordings = callData
@@ -64,7 +64,7 @@ export default function CallList({
       }
     };
 
-    if (type === "recordings") fetchRecordings;
+    if (type === "recordings") fetchRecordings();
   }, [type, recordingsCalls]);
 
   const calls = getCalls();
