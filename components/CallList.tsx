@@ -102,7 +102,7 @@ export default function CallList({
                 : `
               ${process.env.NEXT_PUBLIC_BASE_URL}/meeting/${meeting.id}`
             }
-            buttonText={type === "recordgins" ? "Play" : "Start"}
+            buttonText={type === "recordings" ? "Play" : "Start"}
             handleClick={
               type === "recordings"
                 ? () => router.push(`${meeting.url}`)
