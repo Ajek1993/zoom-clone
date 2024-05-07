@@ -86,9 +86,9 @@ export default function CallList({
                 : "/icons/recordings.svg"
             }
             title={
-              (meeting as Call).state?.custom.description.substring(0, 25) ||
-              meeting.filename.substring(0, 20) ||
-              "No description"
+              (meeting as Call).state?.custom?.description?.substring(0, 25) ||
+              meeting?.filename?.substring(0, 20) ||
+              "Personal Meeting"
             }
             date={
               meeting.state?.startsAt.toLocaleString() ||

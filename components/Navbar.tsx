@@ -12,11 +12,11 @@ export default function Navbar() {
           src={"/icons/logo.svg"}
           width={24}
           height={24}
-          alt="Soom logo"
+          alt="Yoom logo"
           className="max-sm:size-10"
         />
         <p className="text-[26px] font-extrabold text-white max-sm:hidden">
-          Soom
+          Yoom
         </p>
       </Link>
       <div className="flex-between gap-5">
