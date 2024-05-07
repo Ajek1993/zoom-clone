@@ -1,4 +1,5 @@
 "use client";
+
 import { tokenProvider } from "@/actions/stream.actions";
 import Loader from "@/components/Loader";
 import { useUser } from "@clerk/nextjs";
@@ -9,7 +10,6 @@ const apiKey = process.env.NEXT_PUBLIC_STREAM_API_KEY;
 
 export const StreamVideoProvider = ({ children }: { children: ReactNode }) => {
   const [videoClient, setVideoClient] = useState<StreamVideoClient>();
-
   const { user, isLoaded } = useUser();
 
   useEffect(() => {

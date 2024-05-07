@@ -1,5 +1,6 @@
 "use client";
-import React, { useState } from "react";
+
+import { useState } from "react";
 import MeetingTypeListItem from "./MeetingTypeListItem";
 import { useRouter } from "next/navigation";
 import MeetingModal from "./MeetingModal";
